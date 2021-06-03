@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+
+/* Color Variables */
+/* Social Icon Mixin */
+/* Social Icons */
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 102px;
+  height: 29px;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 2.5rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.social-icon:hover {
+  color: #fff;
+}
+.social-icon:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -150%);
+}
+.social-icon:active {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
+}
+/* instagram */
+.social-icon--instagram {
+  background-image: url(https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png);
+  color: #fff;
+}
+.social-icon--instagram .tooltip {
+  background: #527fa6;
+  color: currentColor;
+}
+.social-icon--instagram .tooltip:after {
+  border-top-color: #527fa6;
+}
+.social-icon i {
+  position: relative;
+  top: 1px;
+}
+
+/* Tooltips */
+.tooltip {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 0.8rem 1rem;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+  transform: translate(-50%, -100%);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+.tooltip:after {
+  display: block;
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  content: "";
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  transform: translate(-50%, 100%);
+}
+/* GitHub */
+.social-icon--github {
+  background-image: url(https://camo.githubusercontent.com/bf4b11af389d1e0caf625c40c274ba71464727c43579e48f512112694888eb62/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f6e706d2f73696d706c652d69636f6e7340332e302e312f69636f6e732f6769746875622e737667);
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.social-icon--github .tooltip {
+  background: #4284c0;
+  color: currentColor;
+}
+.social-icon--github .tooltip:after {
+  border-top-color: #4284c0;
+}
