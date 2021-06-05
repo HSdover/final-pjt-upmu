@@ -4,12 +4,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
 <title>${param.title}</title>
 
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <!-- bootstrap js: jquery load 이후에 작성할것.-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -56,7 +55,7 @@
   </div>
   <div class="header-right">
     <nav class="header-nav">
-      <a href="#" class="header-link">Login</a>
+      <a href="${pageContext.request.contextPath }/member/member.do" class="header-link">Login</a>
       <a href="#" class="header-link header-link--button">Sign Up</a>
     </nav>
     <button class="header-menu-button">Menu</button>
