@@ -19,7 +19,7 @@
 <a href="${pageContext.request.contextPath}/admin/eListAdmin.do">관리페이지</a>	
 
 <a href="${pageContext.request.contextPath}/attendance/attendanceManage.do">근태관리</a>	
-
+<a href="${pageContext.request.contextPath}/calendar/calendar.do">일정</a>
 <main class="responsive-wrapper">
   <div class="page-title">
     <h1>Latest Updates</h1>

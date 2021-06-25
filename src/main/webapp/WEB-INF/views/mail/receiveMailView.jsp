@@ -65,8 +65,9 @@ function deleteMail(){
 			<tr>
 				<td>받는 사람</td>
 				<td>
-					<c:set var = "receiverAdd" value="${fn:replace(mail.receiverAdd, ':', '')}"/>
-					${receiverAdd}
+					<%-- <c:set var = "receiverAdd" value="${fn:replace(mail.receiverAdd, ':', '')}"/>
+					${receiverAdd} --%>
+					지금 로그인한 사람 이름
 				</td>
 			</tr>
 			<tr>

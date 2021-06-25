@@ -131,7 +131,8 @@ function deleteMail(){
 				success: function(result){
 					if(result == "OK"){
 						alert("삭제하였습니다.");
-						window.location.href='${pageContext.request.contextPath}/mail/receiveMailList.do'
+						location.reload();
+						//window.location.href='${pageContext.request.contextPath}/mail/receiveMailList.do'
 					}
 					else {
 						alert("삭제 실패하였습니다.");	
