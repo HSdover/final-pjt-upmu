@@ -6,20 +6,64 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp">
 	<jsp:param value="UPMU" name="title"/>
 </jsp:include>
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/index.css" />
+ <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 <body>
 
-<a href="${pageContext.request.contextPath}/board/boardList.do">게시판</a>	
-<a href="${pageContext.request.contextPath}/employeeList/eList.do">조직도</a>	
-<input type="button" value="조직도팝업" onclick="eListPop();">	
-<a href="${pageContext.request.contextPath}/document/docMain">전자결재</a>
-<a href="${pageContext.request.contextPath}/chat/chatRoomList.do">채팅</a>
-<a href="${pageContext.request.contextPath}/mail/sendMailList.do">보낸 메일함(테스트용 사번 : 1)</a>
-<a href="${pageContext.request.contextPath}/mail/receiveMailList.do">받은 메일함(테스트용 사번 : 2)</a>
-<a href="${pageContext.request.contextPath}/admin/eListAdmin.do">관리페이지</a>	
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 0px 0 40px 20%; margin: -55px 0px 0px 0px;" >
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"
+              href="${pageContext.request.contextPath}/attendance/attendanceManage.do">게시판</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"
+              href="${pageContext.request.contextPath}/document/docMain.do">전자결재</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"
+              href="${pageContext.request.contextPath}/board/boardList.do">근태관리</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"
+              href="${pageContext.request.contextPath}/chat/chatRoomList.do">채팅</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              조직도
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/employeeList/eList.do">페이지이동</a>
+              </li>
+              <li><input value="새창으로이동" onclick="eListPop();" class="dropdown-item" /></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              메일함
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/mail/sendMailList.do">보낸 메일함</a>
+              </li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/mail/receiveMailList.do">받은 메일함</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"
+              href="${pageContext.request.contextPath}/calendar/calendar.do">일정</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<a href="${pageContext.request.contextPath}/attendance/attendanceManage.do">근태관리</a>	
-<a href="${pageContext.request.contextPath}/calendar/calendar.do">일정</a>
 <main class="responsive-wrapper">
   <div class="page-title">
     <h1>Latest Updates</h1>
