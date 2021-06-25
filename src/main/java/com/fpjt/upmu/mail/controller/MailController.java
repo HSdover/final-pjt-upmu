@@ -395,5 +395,4 @@ public class MailController {
 
 		return result;
 	}
-
 }

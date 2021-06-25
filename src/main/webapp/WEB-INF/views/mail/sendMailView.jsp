@@ -104,5 +104,4 @@ function deleteMail(){
 			<button type="button" class="btn btn-outline-danger" onclick="deleteMail();">삭제</button>
 	</div>
 </div>
-
 <jsp:include page="/WEB-INF/views/common/footer.jsp"></jsp:include></html>

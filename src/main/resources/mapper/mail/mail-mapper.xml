@@ -211,5 +211,4 @@
 		where
 			mail_no = #{str} and receiver_del = 0 and sender_del = 0
 	</update>
-
 </mapper>

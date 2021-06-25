@@ -31,5 +31,4 @@ public interface MailDao {
 	List<MailReceiver> searchReceiver(String searchReceiver);
 
 	String deleteMail(String str, int who, int now);
-
 }
