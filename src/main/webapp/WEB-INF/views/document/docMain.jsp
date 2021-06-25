@@ -10,7 +10,6 @@
 
 <section>
 	<article>
-	메인페이지
 	</article>
 </section>
 

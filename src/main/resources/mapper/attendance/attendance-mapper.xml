@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="attendance">
+	<insert id="startWork">
+		insert into attendance
+		values (seq_att_no.nextval, #{empNo}, current_date, null, null)
+	</insert>
+	<update id="endWork">
+		update attendance
+		set att_end = current_date
+		where emp_no = #{empNo} 
+			and 
+		to_char(att_start, 'YYMMDD') = to_char(current_date, 'YYMMDD')
+	</update>
+	<select id="selectWorkList" resultType="attendance">
+		select * 
+		from attendance
+		where emp_no = #{empNo}
+		<if test="search != null">
+		and TO_CHAR(att_start,'YYYY/MM/DD/HH24:MI:SS') like '%'||#{search}||'%'
+		</if>
+		order by att_start desc
+	</select>
+	<select id="totalWorkHourList" resultType="attendanceExt">
+		select 
+		att_no, emp_no, att_start, att_end, emp_name, 
+		round((att_end - att_start) * 24, 2) workHour 
+		from attendance
+		where emp_no = #{empNo}
+		order by att_start desc
+	</select>
+	<select id="weekHourList" resultType="attendanceExt">
+		select 
+		att_no, emp_no, att_start, att_end, emp_name, 
+		round((att_end - att_start) * 24, 2) workHour 
+		from attendance
+		where emp_no = #{empNo}
+			and TO_CHAR(att_start,'MMDD') <![CDATA[>=]]> #{startOfWeek} 
+			and TO_CHAR(att_start,'MMDD') <![CDATA[<=]]> #{endOfWeek}
+		order by att_start asc
+	</select>
+</mapper>

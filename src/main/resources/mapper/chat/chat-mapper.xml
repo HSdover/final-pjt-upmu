@@ -12,7 +12,7 @@
 	
 	<insert id="insertChatRoom">
 		insert into chatroom 
-		values (seq_chatroom_no.nextval, #{title}, #{empCreate}, sysdate)
+		values (seq_chatroom_no.nextval, #{title}, #{empCreate}, current_date)
 	</insert>
 	
 	<select id="selectedRoomChatList" resultType="chatmsg">
@@ -29,7 +29,7 @@
 	
 	<insert id="insertChatMsg">
 		insert into chatmsg
-		values (seq_chatmsg_no.nextval, #{chatroomNo}, #{writerNo}, #{msg}, sysdate)
+		values (seq_chatmsg_no.nextval, #{chatroomNo}, #{writerNo}, #{msg}, current_date)
 		<!-- 발급받은 chatmsg pk msg_no값을 파라미터 board객체의 property no에 저장한다. msgNo는 세터 -->
 		<selectKey keyProperty="msgNo" resultType="_int" order="AFTER">
 			select seq_chatmsg_no.currval
@@ -40,7 +40,7 @@
 	
 	<insert id="joinChatRoom">
 		insert into chatroomjoin
-		values (seq_chatroomjoin_no.nextval, #{empNo}, #{chatroomNo}, sysdate)
+		values (seq_chatroomjoin_no.nextval, #{empNo}, #{chatroomNo}, current_date)
 			<selectKey keyColumn="jreg_date" keyProperty="regDate" resultType="date" order="AFTER">
 				select reg_date
 				from chatroomjoin
@@ -60,14 +60,13 @@
 	
 	<insert id="insertDirectMsg">
 		insert into directmsg
-		values (seq_directmsg_no.nextval, #{messageContent}, sysdate, #{messageSender}, #{messageReceiver}, default)
+		values (seq_directmsg_no.nextval, #{messageContent}, sysdate, #{messageSender}, #{messageReceiver}, current_date)
 	</insert>
 	
 	<update id="updateChatRoom">
 		update chatroom
 		set title = #{title}
 		where chatroom_no = #{chatroomNo}
-	
 	</update>
 	
 	<select id="selectDmList" parameterType="HashMap" resultType="directmsg">

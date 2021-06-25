@@ -528,7 +528,7 @@
 									const {messageNo, messageContent, messageTime, messageSender, messageReceiver, readCheck} = value;
 															
 									//서버와의 시간차 9시간 조정
-									const time = moment(messageTime).add(9, 'hours').format("Do hh:mm a")
+									const time = moment(messageTime).format("Do hh:mm a")
 														
 									 if(username == messageSender){       
 					                    	html += `<div class="media media-chat media-chat-reverse" id="dm\${messageNo}" onmouseover="showDmIcon(\${messageNo})">
@@ -790,6 +790,7 @@
 
 				//주소록 삭제
 				const addrDelete = (addrNo) =>{
+					//임시 사번
 					const byEmp = 1;
 					const address = {addrNo};
 					console.log(address);

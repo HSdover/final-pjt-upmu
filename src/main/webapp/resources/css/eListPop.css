@@ -23,7 +23,7 @@ h2 {
 .depart-list {
 	position: relative;
 	overflow-x:auto; 
-	width:100px; 
+	width:auto; 
 	height:380px;
 	font-size: 14px;
 }

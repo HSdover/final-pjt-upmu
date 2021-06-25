@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body{
 	position: fixed;
+	background-color: #f8f3eb;
 }
 h2 {
 	margin-top: 0px;
@@ -12,6 +13,7 @@ h2 {
 }
 .list-form {
 	display: flex;
+	width: 220px;
 }
 .list {
 	outline : solid 1px #c8c8c8;

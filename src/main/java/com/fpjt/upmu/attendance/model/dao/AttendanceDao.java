@@ -1,4 +1,4 @@
-package com.fpjt.upmu.attendance.model.service;
+package com.fpjt.upmu.attendance.model.dao;
 
 import java.util.List;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map;
 import com.fpjt.upmu.attendance.model.vo.Attendance;
 import com.fpjt.upmu.attendance.model.vo.AttendanceExt;
 
-public interface AttendanceService {
+public interface AttendanceDao {
 
 	int startWork(int empNo);
 
