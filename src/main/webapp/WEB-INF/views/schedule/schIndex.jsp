@@ -23,12 +23,14 @@
 }
 .list-group{
 	height : 400px;
-	background-color : white;
 	overflow: auto;
 }
 .li-header{
 	height: 10%;
 	position: relative;
+}
+.li-body{
+	background-color : white;
 }
 .span-header{
 	position: absolute;
@@ -41,8 +43,8 @@
 </head>
 <body>
 	<div class="list-group">
-		<div class="li-header" ><span class="span-header">일 정 <span class="badge badge-primary badge-pill">${fn:length(list)}</span></span></div>
-		<div style="height: 90%">
+		<div class="li-header" ><span>일 정 <span class="badge badge-primary badge-pill">${fn:length(list)}</span></span></div>
+		<div class="li-body" style="height: 90%">
 			<c:choose>
 				<c:when test="${empty list}">
 
